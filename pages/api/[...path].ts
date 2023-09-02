@@ -15,11 +15,18 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  // don't send cookies to API server
-  req.headers.cookie = '';
-  proxy.web(req, res, {
-    target: process.env.API_URL,
-    changeOrigin: true,
-    selfHandleResponse: false
+  return new Promise((resolve) => {
+    // don't send cookies to API server
+    req.headers.cookie = '';
+    proxy.web(req, res, {
+      target: process.env.API_URL,
+      changeOrigin: true,
+      selfHandleResponse: false
+    })
+
+    proxy.once('proxyRes', () => {
+      resolve(true);
+    })
   })
+ 
 }
