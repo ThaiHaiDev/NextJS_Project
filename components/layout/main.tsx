@@ -15,10 +15,11 @@ export function MainLayout ({children}: LayoutProps) {
         Home
       </Link>
 
+      <hr />
+
       <Link href='/about'>
         About
       </Link>
-
       <div>{children}</div>
     </div>
   );

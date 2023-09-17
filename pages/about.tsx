@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import {MainLayout} from '@/components/layout';
+import {AdminLayout, MainLayout} from '@/components/layout';
 
 export interface IAboutPageProps {
 }
 export default function AboutPage (props: IAboutPageProps) {
   return (
-    <MainLayout>
+    <AdminLayout>
       <h1>About Page</h1>
 
       <ul>
@@ -14,6 +14,8 @@ export default function AboutPage (props: IAboutPageProps) {
         <li>Ho</li>
         <li>Ha</li>
       </ul>
-    </MainLayout>
+    </AdminLayout>
   );
 }
+
+AboutPage.Layout = AdminLayout
