@@ -1,7 +1,6 @@
 import * as React from 'react';
 import useSWR from 'swr';
 
-
 export interface IStudentDetailProps {
     studentId: string;
 }
