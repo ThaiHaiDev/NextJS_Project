@@ -41,7 +41,7 @@ export default function handler(
           // convert token to cookies
           const cookies = new Cookies(req, res, { secure: process.env.NODE_ENV === 'production' });
           cookies.set('access_token', accessToken, {
-            httpOnly: true,
+            httpOnly: true,  // when attack XSS in console browser = document.cookie -> not show access_token
             sameSite: 'lax',
             expires: new Date(expiredAt)
           })
