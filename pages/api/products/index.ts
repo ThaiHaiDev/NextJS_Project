@@ -27,7 +27,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
     if(req.method !== 'GET') {
-        res.status(200).json({ name: 'Method not supported' })
+        res.status(404).json({ name: 'Method not supported' })
     }
 
     const response = await fetch('https://js-post-api.herokuapp.com/api/posts?_page=1&_limit=10');

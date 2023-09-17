@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@graphql-codegen/cli": "^5.0.0",
+    "@types/cookies": "^0.7.8",
     "@types/http-proxy": "^1.17.11",
+    "cookies": "^0.8.0",
     "http-proxy": "^1.18.1",
     "next": "13.4.12",
     "react": "18.2.0",
